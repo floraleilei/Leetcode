@@ -1,0 +1,28 @@
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """  
+        d = {}
+        for i,x in enumerate(nums):           
+            if target - x in d:
+                return [d[target-x],i]
+            d[x] = i 
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """   
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[j] == target-nums[i]:
+                    return [i,j]
+
+        
+       
