@@ -1,0 +1,14 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+        cursum=maxsum=nums[0]
+        for n in nums[1:]:
+            cursum = max(n,cursum + n)
+            maxsum = max(cursum,maxsum)
+        return maxsum
+ 
