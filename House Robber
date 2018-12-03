@@ -1,0 +1,26 @@
+class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        last = 0
+        now = 0
+
+        for i in nums: last, now = now, max(last + i, now)
+                
+        return now
+        
+        
+ class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        prev = curr = 0
+        for i in nums:
+            prev2 = prev
+            prev = curr
+            curr = max(prev2+i,prev)
+        return curr
