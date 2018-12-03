@@ -1,0 +1,18 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if not prices:
+            return 0
+        mimp = prices[0]
+        max_profit = 0
+        for i in range(1,len(prices)):
+            if prices[i] >= mimp:
+                profit = prices[i]-mimp
+                max_profit = max(max_profit,profit)
+            else:
+                mimp = prices[i] 
+        return max_profit
+        
